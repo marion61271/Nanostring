@@ -1,0 +1,5 @@
+library(ggpubr)
+library(pacman)
+subclus2<-read.csv("All_tissues_results_2021.csv",sep = ",",header = T,row.names = 1)
+pacman::p_load('colorspace','ggplot2','patchwork','wesanderson')
+ggboxplot(subclusDF, x = 'Treatment', y = 'ATP4',color = 'Tissue', palette = qualitative_hcl(3, palette = 'harmonic'), add = 'jitter', shape = 'Treatment')
